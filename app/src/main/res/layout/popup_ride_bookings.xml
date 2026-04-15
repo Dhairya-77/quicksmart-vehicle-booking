@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Bookings popup (shown when provider taps the Bookings FAB)
+      Sections: New Requests (with accept/reject/locate/call) + Accepted Rides  -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet_rounded"
+    android:paddingTop="@dimen/_8sdp"
+    android:paddingBottom="@dimen/_28sdp">
+
+    <!-- Drag handle -->
+    <View
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_4sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:background="@color/lightGray" />
+
+    <!-- Title -->
+    <TextView
+        style="@style/title_style"
+        android:text="Ride Bookings"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_14sdp" />
+
+    <!-- ══════════ NEW REQUESTS section ══════════ -->
+    <TextView
+        style="@style/subtitle_style"
+        android:text="New Requests"
+        android:textStyle="bold"
+        android:textColor="@color/darkPurple"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_8sdp" />
+
+    <!-- Empty state for new requests -->
+    <TextView
+        android:id="@+id/no_new_requests_text"
+        style="@style/subtitle_style"
+        android:text="No new ride requests"
+        android:textColor="@color/darkGray"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_new_requests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="@dimen/_200sdp"
+        android:nestedScrollingEnabled="true"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_4sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightGray"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_12sdp" />
+
+    <!-- ══════════ ACCEPTED RIDES section ══════════ -->
+    <TextView
+        style="@style/subtitle_style"
+        android:text="Accepted Rides"
+        android:textStyle="bold"
+        android:textColor="@color/darkPurple"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_8sdp" />
+
+    <!-- Empty state for accepted -->
+    <TextView
+        android:id="@+id/no_accepted_rides_text"
+        style="@style/subtitle_style"
+        android:text="No accepted rides yet"
+        android:textColor="@color/darkGray"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_accepted_rides"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="@dimen/_200sdp"
+        android:nestedScrollingEnabled="true"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_4sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>

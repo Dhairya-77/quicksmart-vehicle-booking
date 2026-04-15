@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <!-- ── App Bar ── -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/app_bar_style"
+        app:title="Terms &amp; Conditions"
+        app:navigationIcon="@drawable/ic_back"/>
+
+    <!-- ── Content ── -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <!-- Section: Introduction -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="Welcome to QuickSmart Provider Network. By offering your services on our platform, you agree to these provider-specific terms and conditions." />
+
+            <!-- Section 1 -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="1. Provider Responsibilities"
+                android:textStyle="bold"
+                android:textColor="@color/darkPurple"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_6sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="As a provider, you agree to:\n• Maintain your vehicle in good, safe working condition.\n• Hold valid licenses and permits required by law.\n• Provide professional and courteous service to all consumers.\n• Keep your profile, including bank details for payouts, up to date." />
+
+            <!-- Section 2 -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="2. Earnings &amp; Payouts"
+                android:textStyle="bold"
+                android:textColor="@color/darkPurple"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_6sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="Your earnings are tracked in the app. QuickSmart charges a platform fee on each completed ride or rental. The net amount will be credited to your linked bank account on the 1st week of every month." />
+
+            <!-- Section 3 -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="3. Safety &amp; Compliance"
+                android:textStyle="bold"
+                android:textColor="@color/darkPurple"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_6sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="You must strictly adhere to all local traffic laws and safety regulations. QuickSmart reserves the right to suspend or terminate your account if you are involved in safety incidents or violate these terms." />
+
+            <!-- Section 4 -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="4. Account Suspension"
+                android:textStyle="bold"
+                android:textColor="@color/darkPurple"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_6sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="We may deactivate your account at our discretion for reasons including, but not limited to, repeated cancellations, fraud, or failure to comply with platform policies." />
+
+            <!-- Footer -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/lightGray"
+                android:layout_marginVertical="@dimen/_12sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/transparentPurple"
+                android:textSize="@dimen/_11sdp"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/_24sdp"
+                android:text="Last updated: March 2026 · QuickSmart v0.1 Beta" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

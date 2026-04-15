@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ── App Bar ── -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/app_bar_style"
+            app:title="Edit Profile"
+            app:navigationIcon="@drawable/ic_back" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <!-- ── Avatar Section ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_20sdp">
+
+                <FrameLayout
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_profile"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:src="@drawable/ic_person"
+                        android:padding="5dp"
+                        android:background="@drawable/bg_circle_border" />
+
+                    <!-- Camera overlay button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btn_change_photo"
+                        android:layout_width="@dimen/_26sdp"
+                        android:layout_height="@dimen/_26sdp"
+                        android:layout_gravity="bottom|end"
+                        app:cardCornerRadius="@dimen/_13sdp"
+                        app:cardBackgroundColor="@color/darkPurple"
+                        app:cardElevation="@dimen/_2sdp">
+
+                        <ImageView
+                            android:layout_width="@dimen/_16sdp"
+                            android:layout_height="@dimen/_16sdp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_edit"
+                            android:contentDescription="Change photo" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/lbl_change_photo"
+                    style="@style/subtitle_style"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="Tap to change photo"
+                    android:textColor="@color/lightPurple" />
+
+            </LinearLayout>
+
+            <!-- ── First Name ── -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="First Name"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/_4sdp" />
+
+            <androidx.cardview.widget.CardView
+                style="@style/textbox_card_style"
+                android:layout_marginBottom="@dimen/_12sdp">
+
+                <EditText
+                    android:id="@+id/edit_first_name"
+                    style="@style/textbox_style"
+                    android:hint="First Name"
+                    android:inputType="textPersonName" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── Last Name ── -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="Last Name"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/_4sdp" />
+
+            <androidx.cardview.widget.CardView
+                style="@style/textbox_card_style"
+                android:layout_marginBottom="@dimen/_12sdp">
+
+                <EditText
+                    android:id="@+id/edit_last_name"
+                    style="@style/textbox_style"
+                    android:hint="Last Name"
+                    android:inputType="textPersonName" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── Mobile No ── -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="Mobile No"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/_4sdp" />
+
+            <androidx.cardview.widget.CardView
+                style="@style/textbox_card_style"
+                android:layout_marginBottom="@dimen/_12sdp">
+
+                <EditText
+                    android:id="@+id/edit_mobile"
+                    style="@style/textbox_style"
+                    android:hint="Enter Mobile No"
+                    android:inputType="phone"
+                    android:maxLength="10" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── Email (non-editable) ── -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="Email"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/_4sdp" />
+
+            <androidx.cardview.widget.CardView
+                style="@style/textbox_card_style"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:cardBackgroundColor="@color/lightGray">
+
+                <EditText
+                    android:id="@+id/edit_email"
+                    style="@style/textbox_style"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:focusable="false"
+                    android:cursorVisible="false"
+                    android:textColor="@color/transparentPurple" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── Save Button / Progress ── -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_save"
+                    style="@style/btn_style"
+                    android:layout_marginTop="0dp"
+                    android:text="Save Changes" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="@style/progress_bar_style"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

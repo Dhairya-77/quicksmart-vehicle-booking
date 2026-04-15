@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Ride Settings popup (shown when provider taps the Ride Settings FAB)  -->
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet_rounded"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_28sdp">
+
+        <!-- Drag handle -->
+        <View
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_4sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@color/lightGray" />
+
+        <!-- Title -->
+        <TextView
+            style="@style/title_style"
+            android:text="Ride Settings"
+            android:textSize="@dimen/_16sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_12sdp" />
+
+        <!-- ── Active / Deactive switch ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_14sdp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/settings_ride_status_label"
+                    style="@style/subtitle_style"
+                    android:text="Ride Status"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_14sdp"
+                    android:layout_marginTop="0dp" />
+
+                <TextView
+                    android:id="@+id/settings_ride_status_hint"
+                    style="@style/subtitle_style"
+                    android:text="Toggle to go online"
+                    android:layout_marginTop="@dimen/_2sdp" />
+
+            </LinearLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/settings_ride_switch"
+                style="@style/switch_style"
+                android:checked="false" />
+
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_14sdp" />
+
+        <!-- ── Current location (read-only) ── -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Current Location"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_4sdp" />
+
+        <androidx.cardview.widget.CardView
+            style="@style/textbox_card_style"
+            app:cardBackgroundColor="@color/lightGray"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_12sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_locate"
+                    app:tint="@color/darkPurple"
+                    android:contentDescription="Location"
+                    android:layout_marginEnd="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/settings_current_location"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Fetching location…"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/darkPurple"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── Destination (read-only) ── -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Destination"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_4sdp" />
+
+        <androidx.cardview.widget.CardView
+            style="@style/textbox_card_style"
+            app:cardBackgroundColor="@color/lightGray"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_12sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_destination"
+                    app:tint="@color/darkPurple"
+                    android:contentDescription="Destination"
+                    android:layout_marginEnd="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/settings_destination"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Not set"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/darkPurple"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── Per person pricing ── -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Per Person Price (₹)"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_4sdp" />
+
+        <androidx.cardview.widget.CardView
+            style="@style/textbox_card_style"
+            app:cardBackgroundColor="@color/lightGray"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_12sdp">
+
+            <EditText
+                android:id="@+id/settings_per_person_price"
+                style="@style/textbox_style"
+                android:background="@null"
+                android:hint="e.g. 25"
+                android:inputType="numberSigned"
+                android:imeOptions="actionDone" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── Vehicle selection (For Ride vehicles from Firestore) ── -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Select Vehicle"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_4sdp" />
+
+        <androidx.cardview.widget.CardView
+            style="@style/textbox_card_style"
+            app:cardBackgroundColor="@color/lightGray"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_12sdp">
+
+            <Spinner
+                android:id="@+id/settings_vehicle_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:spinnerMode="dropdown" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── Seat Info (total / occupied) ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_4sdp">
+
+            <TextView
+                style="@style/subtitle_style"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Total Seats"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/subtitle_style"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Seats Occupied"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_20sdp">
+
+            <!-- Total Seats (read-only from vehicle) -->
+            <androidx.cardview.widget.CardView
+                style="@style/textbox_card_style"
+                app:cardBackgroundColor="@color/lightGray"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/_6sdp">
+
+                <TextView
+                    android:id="@+id/settings_total_seats"
+                    style="@style/textbox_style"
+                    android:text="—"
+                    android:textColor="@color/darkPurple" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Seats Occupied (editable) -->
+            <androidx.cardview.widget.CardView
+                style="@style/textbox_card_style"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_6sdp"
+                app:cardBackgroundColor="@color/lightGray">
+
+                <EditText
+                    android:id="@+id/settings_seats_occupied"
+                    style="@style/textbox_style"
+                    android:background="@null"
+                    android:hint="0"
+                    android:inputType="number"
+                    android:imeOptions="actionDone" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <!-- Save button / Loading -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp">
+
+            <Button
+                android:id="@+id/settings_save_btn"
+                style="@style/btn_style"
+                android:layout_marginTop="0dp"
+                android:text="Save Settings" />
+
+            <ProgressBar
+                android:id="@+id/settings_progress"
+                style="@style/progress_bar_style"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

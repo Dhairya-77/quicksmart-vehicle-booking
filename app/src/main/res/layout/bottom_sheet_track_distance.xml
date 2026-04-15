@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/_20sdp"
+    android:background="@drawable/bg_bottom_sheet_rounded"
+    android:backgroundTint="@color/white">
+
+    <!-- Handle -->
+    <View
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="4dp"
+        android:background="@color/lightGray"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_15sdp" />
+
+    <!-- Rider Name / Title -->
+    <TextView
+        android:id="@+id/trackTitle"
+        style="@style/title_style"
+        android:text="Tracking Provider"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/trackRiderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/_14sdp"
+        android:textStyle="bold"
+        android:textColor="@color/darkPurple"
+        android:visibility="gone" />
+
+    <!-- Loading Indicator -->
+    <ProgressBar
+        android:id="@+id/trackProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="@dimen/_15sdp" />
+
+    <!-- Stats Row (compatible with both logic paths) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/trackDistance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@color/darkGray"
+            android:gravity="center"
+            android:text="Calculating distance…" />
+
+        <!-- Legacy ID for TrackingBottomSheet -->
+        <TextView
+            android:id="@+id/trackDistanceLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/trackDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_16sdp"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="— mins" />
+
+        <!-- Legacy ID for TrackingBottomSheet -->
+        <TextView
+            android:id="@+id/trackEta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- Destination Banner (for TrackingBottomSheet) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/reachedDestinationCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/green"
+        app:cardCornerRadius="@dimen/_8sdp"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:text="You have reached your destination!"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Map Container -->
+    <FrameLayout
+        android:id="@+id/trackingMapView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/lightGray"
+        android:visibility="gone" />
+
+    <!-- Close Buttons -->
+    <Button
+        android:id="@+id/btnTrackClose"
+        style="@style/btn_style"
+        android:text="Close"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <Button
+        android:id="@+id/btnCloseTracking"
+        style="@style/btn_style"
+        android:text="Close"
+        android:visibility="gone" />
+
+</LinearLayout>

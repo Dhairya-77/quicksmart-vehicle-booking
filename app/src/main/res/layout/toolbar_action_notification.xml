@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_47sdp"
+    android:layout_height="@dimen/_35sdp"
+    android:paddingEnd="@dimen/_8sdp">
+
+    <!-- Bell icon -->
+    <ImageView
+        android:id="@+id/notificationBell"
+        android:layout_width="@dimen/_26sdp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_notification"
+        android:contentDescription="Notifications" />
+
+    <!-- Badge count -->
+    <!-- Circular badge -->
+    <TextView
+        android:id="@+id/notificationBadge"
+        android:layout_width="@dimen/_16sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:layout_gravity="top|end"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:background="@drawable/bg_badge_circle"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_8sdp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</FrameLayout>

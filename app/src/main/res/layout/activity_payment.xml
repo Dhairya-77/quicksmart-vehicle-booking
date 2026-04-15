@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/_24sdp"
+    android:background="@color/white">
+
+    <!-- Icon -->
+    <ImageView
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:src="@drawable/ic_wallet"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:tint="@color/darkPurple"
+        android:contentDescription="Payment icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Secure Payment"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        android:textColor="@color/darkPurple"
+        android:layout_marginBottom="@dimen/_8sdp" />
+
+    <!-- Status message -->
+    <TextView
+        android:id="@+id/paymentStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preparing your payment…"
+        android:textSize="@dimen/_13sdp"
+        android:textColor="@color/darkGray"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_24sdp" />
+
+    <!-- Loading spinner -->
+    <ProgressBar
+        android:id="@+id/paymentProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/darkPurple"
+        android:layout_marginBottom="@dimen/_24sdp"
+        android:visibility="visible" />
+
+    <!-- Retry button (hidden until error) -->
+    <Button
+        android:id="@+id/btnRetryPayment"
+        style="@style/btn_style"
+        android:text="Retry"
+        android:visibility="gone" />
+
+</LinearLayout>

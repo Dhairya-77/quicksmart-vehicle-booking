@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/textbox_card_style"
+    android:layout_marginHorizontal="@dimen/_15sdp"
+    android:layout_marginBottom="@dimen/_12sdp"
+    android:layout_marginTop="@dimen/_4sdp"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="@dimen/_2sdp"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/lightGray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_12sdp">
+
+        <!-- ── Row 1: Icon + Name + Status ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_42sdp"
+                app:cardCornerRadius="@dimen/_21sdp"
+                app:cardBackgroundColor="@color/lightGray"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:id="@+id/rental_req_vehicle_icon"
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_car"
+                    app:tint="@color/darkPurple"
+                    android:contentDescription="Vehicle" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/rental_req_consumer_name"
+                        style="@style/subtitle_style"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_marginTop="0dp"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+                    <!-- Call Action Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/rental_req_call_container"
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        app:cardCornerRadius="@dimen/_14sdp"
+                        app:cardBackgroundColor="@color/lightGray"
+                        app:cardElevation="0dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:id="@+id/rental_req_call"
+                            android:layout_width="@dimen/_16sdp"
+                            android:layout_height="@dimen/_16sdp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_action_call"
+                            app:tint="@color/green"
+                            android:contentDescription="Call consumer" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/rental_req_vehicle_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/darkGray"
+                    android:layout_marginTop="@dimen/_2sdp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/rental_req_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="Pending"
+                android:background="@drawable/bg_bottom_sheet_rounded"
+                android:backgroundTint="@color/red" />
+
+        </LinearLayout>
+
+        <!-- ── Divider ── -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"
+            android:layout_marginVertical="@dimen/_10sdp" />
+
+        <!-- ── Row 2: Dates ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pickup Date"
+                    android:textSize="@dimen/_9sdp"
+                    android:textColor="@color/darkGray" />
+
+                <TextView
+                    android:id="@+id/rental_req_from_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/darkPurple"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_right_arrow"
+                app:tint="@color/darkGray"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:contentDescription="to" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Return Date"
+                    android:textSize="@dimen/_9sdp"
+                    android:textColor="@color/darkGray" />
+
+                <TextView
+                    android:id="@+id/rental_req_to_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/darkPurple"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── Row 3: Pickup location ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/_6sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pick up Location :"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/darkPurple"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rental_req_pickup_location"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="@color/darkGray"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginStart="@dimen/_6sdp" />
+
+        </LinearLayout>
+
+        <!-- ── Row 4: Drop-off location ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Destination Location :"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/darkPurple"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rental_req_dropoff_location"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="@color/darkGray"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginStart="@dimen/_6sdp" />
+
+        </LinearLayout>
+
+        <!-- ── Row 5: Fare / Days / Passengers ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_8sdp">
+
+            <!-- Fare -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount"
+                    android:textSize="@dimen/_9sdp"
+                    android:textColor="@color/darkGray" />
+
+                <TextView
+                    android:id="@+id/rental_req_fare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/darkPurple"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Days -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duration"
+                    android:textSize="@dimen/_9sdp"
+                    android:textColor="@color/darkGray" />
+
+                <TextView
+                    android:id="@+id/rental_req_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/darkPurple"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Passengers -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pass. / Bags"
+                    android:textSize="@dimen/_9sdp"
+                    android:textColor="@color/darkGray" />
+
+                <TextView
+                    android:id="@+id/rental_req_passengers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/darkPurple"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── Row 6: Driver tag (visible only when driver requested) ── -->
+        <TextView
+            android:id="@+id/rental_req_driver_needed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:background="@drawable/bg_bottom_sheet_rounded"
+            android:backgroundTint="@color/green"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9sdp"
+            android:textStyle="bold"
+            android:text="Driver Requested"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:visibility="gone" />
+
+        <!-- Luggage info (separate hidden view for adapter binding) -->
+        <TextView
+            android:id="@+id/rental_req_luggage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <!-- ── Divider ── -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"
+            android:layout_marginBottom="@dimen/_10sdp" />
+
+        <!-- ── Row 7: Accept / Reject ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_reject_rental"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:text="Reject"
+                android:textColor="@color/red"
+                android:backgroundTint="@color/lightGray"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_accept_rental"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Accept"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/darkPurple"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

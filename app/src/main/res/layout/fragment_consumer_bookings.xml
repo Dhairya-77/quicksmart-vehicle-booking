@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- ── Tab Row ─────────────────────────────────────────────────────── -->
+    <!--
+         Using a custom tab strip backed by two TextViews so we stay inside
+         the existing Stack (no TabLayout/ViewPager2 dependency needed).
+         The active tab gets darkPurple background + white text.
+    -->
+    <LinearLayout
+        android:id="@+id/tabContainer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_42sdp"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_15sdp"
+        android:background="@color/lightGray"
+        android:padding="@dimen/_3sdp">
+
+        <!-- Ride tab -->
+        <TextView
+            android:id="@+id/tabRide"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Ride"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@color/darkPurple" />
+
+        <!-- Rent tab -->
+        <TextView
+            android:id="@+id/tabRent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Rent"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@color/darkPurple"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@color/lightGray" />
+
+    </LinearLayout>
+
+    <!-- ── Progress Bar ─────────────────────────────────────────────── -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/progress_bar_style"
+        android:visibility="gone" />
+
+    <!-- ── Ride Bookings List ───────────────────────────────────────────── -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rideBookingsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_80sdp"
+        android:visibility="visible" />
+
+    <!-- ── Rent Bookings List ───────────────────────────────────────────── -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rentBookingsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_80sdp"
+        android:visibility="gone" />
+
+    <!-- ── Empty state (shared between tabs) ───────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/emptyState"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:src="@drawable/ic_bookings"
+            android:alpha="0.35"
+            app:tint="@color/darkGray"
+            android:contentDescription="No bookings" />
+
+        <TextView
+            android:id="@+id/emptyStateText"
+            style="@style/subtitle_style"
+            android:text="No bookings found"
+            android:textColor="@color/transparentPurple"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_12sdp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <!-- ── App Bar ── -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/app_bar_style"
+        app:title="Terms &amp; Conditions"
+        app:navigationIcon="@drawable/ic_back"/>
+
+    <!-- ── Content ── -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <!-- Section: Introduction -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="Welcome to QuickSmart. By using our services, you agree to the following terms and conditions. Please read them carefully before proceeding." />
+
+            <!-- Section 1 -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="1. Acceptance of Terms"
+                android:textStyle="bold"
+                android:textColor="@color/darkPurple"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_6sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="By accessing or using QuickSmart, you confirm that you are at least 18 years of age and have the legal authority to enter into this agreement. If you do not agree to these terms, please do not use our services." />
+
+            <!-- Section 2 -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="2. Services Provided"
+                android:textStyle="bold"
+                android:textColor="@color/darkPurple"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_6sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="QuickSmart provides on-demand ride booking, vehicle rental services, and related mobility solutions. All bookings are subject to vehicle and driver availability in your area." />
+
+            <!-- Section 3 -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="3. User Responsibilities"
+                android:textStyle="bold"
+                android:textColor="@color/darkPurple"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_6sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="You agree to:\n• Provide accurate personal information during registration.\n• Use the services only for lawful purposes.\n• Not misuse, disrupt, or attempt to gain unauthorized access to any part of the platform.\n• Treat service providers with respect and dignity." />
+
+            <!-- Section 4 -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="4. Payment &amp; Cancellation"
+                android:textStyle="bold"
+                android:textColor="@color/darkPurple"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_6sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="All payments are processed securely through our platform. Cancellation charges may apply depending on the time of cancellation and the type of booking. Refunds, if applicable, will be credited to your wallet within 3–5 business days." />
+
+            <!-- Section 5 -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="5. Privacy Policy"
+                android:textStyle="bold"
+                android:textColor="@color/darkPurple"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_6sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="We collect and use your personal data in accordance with our Privacy Policy. Your data will never be sold to third parties. Location data is used solely to provide ride and rental services." />
+
+            <!-- Section 6 -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="6. Limitation of Liability"
+                android:textStyle="bold"
+                android:textColor="@color/darkPurple"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_6sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="QuickSmart shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services, including loss of data, delays, or service interruptions beyond our control." />
+
+            <!-- Section 7 -->
+            <TextView
+                style="@style/subtitle_style"
+                android:text="7. Modifications to Terms"
+                android:textStyle="bold"
+                android:textColor="@color/darkPurple"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_6sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/_13sdp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:text="QuickSmart reserves the right to modify these terms at any time. Continued use of the app after changes constitutes your acceptance of the revised terms. We recommend reviewing this page periodically." />
+
+            <!-- Footer -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/lightGray"
+                android:layout_marginBottom="@dimen/_12sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/transparentPurple"
+                android:textSize="@dimen/_11sdp"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/_24sdp"
+                android:text="Last updated: March 2026 · QuickSmart v0.1 Beta" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

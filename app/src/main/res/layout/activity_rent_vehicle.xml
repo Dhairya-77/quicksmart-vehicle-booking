@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp">
+
+        <!-- ── Header ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/_20sdp">
+
+            <!-- Back button -->
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/ic_home"
+                app:tint="@color/darkPurple"
+                android:contentDescription="Back"
+                android:padding="@dimen/_3sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="@dimen/_12sdp" />
+
+            <!-- Title + subtitle (fills remaining space) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/title_style"
+                    android:text="Rent a Vehicle" />
+
+                <TextView
+                    style="@style/subtitle_style"
+                    android:text="Fill in your rental details"
+                    android:layout_marginTop="@dimen/_2sdp" />
+
+            </LinearLayout>
+
+            <!-- Vehicle icon + type label stacked on the right -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/vehicleTypeIcon"
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    android:src="@drawable/ic_car"
+                    app:tint="@color/darkPurple"
+                    android:contentDescription="Vehicle type" />
+
+                <TextView
+                    android:id="@+id/vehicleTypeLabel"
+                    style="@style/subtitle_style"
+                    android:text="Car"
+                    android:textSize="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── Section: Locations ── -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Locations"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginTop="0dp" />
+
+        <!-- Pickup Location -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Pickup Location"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginTop="0dp" />
+
+        <androidx.cardview.widget.CardView
+            style="@style/textbox_card_style"
+            app:cardBackgroundColor="@color/lightGray"
+            android:layout_marginBottom="@dimen/_12sdp">
+
+            <EditText
+                android:id="@+id/pickupLocationInput"
+                style="@style/textbox_style"
+                android:background="@null"
+                android:hint="Enter pickup city or address"
+                android:inputType="text"
+                android:imeOptions="actionNext" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Drop-off Location -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Drop-off Location"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginTop="0dp" />
+
+        <androidx.cardview.widget.CardView
+            style="@style/textbox_card_style"
+            app:cardBackgroundColor="@color/lightGray"
+            android:layout_marginBottom="@dimen/_20sdp">
+
+            <EditText
+                android:id="@+id/dropoffLocationInput"
+                style="@style/textbox_style"
+                android:background="@null"
+                android:hint="Enter drop-off city or address"
+                android:inputType="text"
+                android:imeOptions="actionNext" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── Section: Schedule ── -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Schedule"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginTop="0dp" />
+
+        <!-- Pickup Date & Time -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Pickup Date &amp; Time"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginTop="0dp" />
+
+        <androidx.cardview.widget.CardView
+            style="@style/textbox_card_style"
+            app:cardBackgroundColor="@color/lightGray"
+            android:layout_marginBottom="@dimen/_12sdp">
+
+            <EditText
+                android:id="@+id/pickupDateTimeInput"
+                style="@style/textbox_style"
+                android:background="@null"
+                android:hint="DD / MM / YYYY   HH : MM"
+                android:inputType="datetime"
+                android:imeOptions="actionNext"
+                android:focusable="false"
+                android:clickable="true" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Return Date & Time -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Return Date &amp; Time"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginTop="0dp" />
+
+        <androidx.cardview.widget.CardView
+            style="@style/textbox_card_style"
+            app:cardBackgroundColor="@color/lightGray"
+            android:layout_marginBottom="@dimen/_20sdp">
+
+            <EditText
+                android:id="@+id/returnDateTimeInput"
+                style="@style/textbox_style"
+                android:background="@null"
+                android:hint="DD / MM / YYYY   HH : MM"
+                android:inputType="datetime"
+                android:imeOptions="actionNext"
+                android:focusable="false"
+                android:clickable="true" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- ── Section: Trip Details ── -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Trip Details"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginTop="0dp" />
+
+        <!-- Passengers + Days row -->
+        <LinearLayout
+            android:id="@+id/passengerRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:layout_marginBottom="@dimen/_12sdp">
+
+            <!-- Number of Passengers -->
+            <LinearLayout
+                android:id="@+id/passengerColumn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="@dimen/_12sdp">
+
+                <TextView
+                    style="@style/subtitle_style"
+                    android:text="Passengers"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:layout_marginTop="0dp" />
+
+                <androidx.cardview.widget.CardView
+                    style="@style/textbox_card_style"
+                    app:cardBackgroundColor="@color/lightGray">
+
+                    <EditText
+                        android:id="@+id/passengerCountInput"
+                        style="@style/textbox_style"
+                        android:background="@null"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:imeOptions="actionNext" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Note shown when bike is selected -->
+                <TextView
+                    android:id="@+id/bikePassengerNote"
+                    style="@style/subtitle_style"
+                    android:text="⚠ Bike: 1 passenger only"
+                    android:textColor="@color/darkPurple"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <!-- Number of Days -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/subtitle_style"
+                    android:text="Number of Days"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:layout_marginTop="0dp" />
+
+                <androidx.cardview.widget.CardView
+                    style="@style/textbox_card_style"
+                    app:cardBackgroundColor="@color/lightGray">
+
+                    <EditText
+                        android:id="@+id/rentalDaysInput"
+                        style="@style/textbox_style"
+                        android:background="@null"
+                        android:hint="Auto calculated"
+                        android:inputType="none"
+                        android:focusable="false"
+                        android:clickable="false"
+                        android:textColor="@color/darkPurple"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Luggage -->
+        <LinearLayout
+            android:id="@+id/luggageSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/subtitle_style"
+                android:text="Luggage (bags)"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:layout_marginTop="0dp" />
+
+            <androidx.cardview.widget.CardView
+                style="@style/textbox_card_style"
+                app:cardBackgroundColor="@color/lightGray">
+
+                <EditText
+                    android:id="@+id/luggageCountInput"
+                    style="@style/textbox_style"
+                    android:background="@null"
+                    android:hint="0"
+                    android:inputType="number"
+                    android:imeOptions="actionNext" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Luggage limit note -->
+            <TextView
+                android:id="@+id/luggageNote"
+                style="@style/subtitle_style"
+                android:text="Max 2 bags allowed"
+                android:textColor="@color/darkPurple"
+                android:textSize="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <!-- Driver Required toggle -->
+        <LinearLayout
+            android:id="@+id/driverRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/_12sdp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/subtitle_style"
+                    android:text="Driver Required?"
+                    android:textStyle="bold"
+                    android:layout_marginTop="0dp" />
+
+                <TextView
+                    style="@style/subtitle_style"
+                    android:text="Toggle off for self-drive"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_2sdp" />
+
+            </LinearLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/driverRequiredSwitch"
+                style="@style/switch_style"
+                android:checked="false" />
+
+        </LinearLayout>
+
+        <!-- Contact Number -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Contact Number"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginTop="0dp" />
+
+        <androidx.cardview.widget.CardView
+            style="@style/textbox_card_style"
+            app:cardBackgroundColor="@color/lightGray"
+            android:layout_marginBottom="@dimen/_12sdp">
+
+            <EditText
+                android:id="@+id/contactNumberInput"
+                style="@style/textbox_style"
+                android:background="@null"
+                android:hint="+91 XXXXX XXXXX"
+                android:inputType="phone"
+                android:imeOptions="actionNext" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Special Requests -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Special Requests  (optional)"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginTop="0dp" />
+
+        <androidx.cardview.widget.CardView
+            style="@style/textbox_card_style"
+            app:cardBackgroundColor="@color/lightGray"
+            android:layout_marginBottom="@dimen/_24sdp">
+
+            <EditText
+                android:id="@+id/specialRequestsInput"
+                style="@style/textbox_style"
+                android:background="@null"
+                android:hint="e.g. child seat, AC preferred, specific route…"
+                android:inputType="textMultiLine"
+                android:gravity="top|start"
+                android:minLines="3"
+                android:maxLines="5"
+                android:imeOptions="actionDone" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── Show Vehicles Button ── -->
+        <Button
+            android:id="@+id/showVehiclesButton"
+            style="@style/btn_style"
+            android:text="Show Available Vehicles"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="@dimen/_20sdp" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

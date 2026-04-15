@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Each row in the dropdown list that appears when spinner is tapped -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/lightGray"
+    android:padding="@dimen/_10sdp"
+    android:textSize="@dimen/_15sdp"
+    android:textColor="@color/darkPurple"
+    android:ellipsize="end"
+    android:maxLines="1" />

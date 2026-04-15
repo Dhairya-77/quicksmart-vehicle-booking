@@ -1,0 +1,163 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.QuickSmart" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+
+        <!-- status bar background color -->
+        <item name="android:statusBarColor">@color/darkPurple</item>
+
+        <!-- light icons (clock, battery, wifi) on dark status bar -->
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- fix for Android 15+: opt-out of enforced edge-to-edge to allow custom statusBarColor -->
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+
+        <!-- material 3 bottom nav active indicator color -->
+        <item name="colorSecondaryContainer">@color/lightPurple</item>
+
+        <!-- system bottom bar(navigation bar area) color -->
+        <item name="android:navigationBarColor">@color/darkPurple</item>
+
+        <!-- calendar / clock dialogs custom theme  -->
+        <item name="android:datePickerDialogTheme">@style/DatePickerDialogTheme</item>
+        <item name="android:timePickerDialogTheme">@style/TimePickerDialogTheme</item>
+    </style>
+
+    <style name="Theme.QuickSmart" parent="Base.Theme.QuickSmart" />
+
+
+    <!-- Primary full-width button (dark purple background) -->
+    <style name="btn_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <item name="android:textColor">@color/transparentWhite</item>
+        <item name="backgroundTint">@color/darkPurple</item>
+        <item name="android:layout_marginTop">@dimen/_15sdp</item>
+    </style>
+
+    <!-- CardView that wraps an EditText (rounded gray input card) -->
+    <style name="textbox_card_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardCornerRadius">@dimen/_10sdp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <!-- Square option card (e.g. vehicle type selector) -->
+    <style name="square_card_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_100sdp</item>
+        <item name="cardCornerRadius">@dimen/_10sdp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardBackgroundColor">@color/lightGray</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- MaterialSwitch — matches btn_style colour palette.
+         Track = darkPurple (ON) / lightGray (OFF)
+         Thumb = white (ON) / lightPurple (OFF)             -->
+    <style name="switch_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:thumbTint">@color/switch_thumb_tint</item>
+        <item name="trackTint">@color/switch_track_tint</item>
+        <item name="trackDecorationTint">@color/switch_track_tint</item>
+    </style>
+
+    <!-- DatePickerDialog — ThemeOverlay patches only colors, keeps M3 structure intact -->
+    <style name="DatePickerDialogTheme" parent="ThemeOverlay.Material3.Dialog">
+        <item name="colorPrimary">@color/darkPurple</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <!-- TimePickerDialog — ThemeOverlay patches only clock colors -->
+    <style name="TimePickerDialogTheme" parent="ThemeOverlay.Material3.Dialog">
+        <item name="colorPrimary">@color/darkPurple</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <!-- EditText inside an InputCard -->
+    <style name="textbox_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/lightGray</item>
+        <item name="android:padding">@dimen/_10sdp</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <item name="android:textColorHint">@color/transparentPurple</item>
+        <item name="android:textColor">@color/darkPurple</item>
+    </style>
+
+    <!-- Clickable link-style text (e.g. "Didn't Receive OTP?") -->
+    <style name="text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <item name="android:textColor">@color/lightPurple</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/_28sdp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <!-- Spinner (role selector) common properties -->
+    <style name="spinner_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/_10sdp</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <item name="android:textColor">@color/darkPurple</item>
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+
+    <!-- Screen title (e.g. "Create Account") -->
+    <style name="title_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_20sdp</item>
+        <item name="android:textColor">@color/darkPurple</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Screen subtitle (e.g. "Fill in the details below to register") -->
+    <style name="subtitle_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/_3sdp</item>
+        <item name="android:textSize">@dimen/_13sdp</item>
+        <item name="android:textColor">@color/darkPurple</item>
+    </style>
+
+    <!-- Indeterminate horizontal ProgressBar (Splash screen) -->
+    <style name="progress_bar_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateTint">@color/darkPurple</item>
+        <item name="android:indeterminateTintMode">src_in</item>
+    </style>
+
+    <!-- MaterialToolbar / AppBar -->
+    <style name="app_bar_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/darkPurple</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="subtitleTextColor">@color/white</item>
+        <item name="android:elevation">@dimen/_4sdp</item>
+    </style>
+
+    <!-- BottomNavigationView -->
+    <style name="bottom_nav_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/darkPurple</item>
+        <item name="itemIconTint">@color/nav_item_color</item>
+        <item name="itemTextColor">@color/nav_item_color</item>
+        <item name="elevation">@dimen/_8sdp</item>
+    </style>
+
+</resources>

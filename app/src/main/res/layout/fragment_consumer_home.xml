@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp">
+
+        <!-- Greeting Title -->
+        <TextView
+            android:id="@+id/welcomeTitle"
+            style="@style/title_style"
+            android:text="Welcome back, Username"
+            android:layout_marginBottom="@dimen/_15sdp" />
+
+        <!-- Instant Ride Section -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Instant Ride Booking"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_10sdp" />
+
+        <!-- Row 1: Bike + Car -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:layout_marginBottom="@dimen/_8sdp">
+
+            <!-- Instant – Bike / Scooter -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardInstantBike"
+                style="@style/square_card_style"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/_8sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="@dimen/_15sdp"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:src="@drawable/ic_bike"
+                        app:tint="@color/darkPurple"
+                        android:layout_marginBottom="@dimen/_8sdp" />
+
+                    <TextView
+                        style="@style/subtitle_style"
+                        android:text="Bike / Scooter"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginTop="0dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Instant – Car -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardInstantCar"
+                style="@style/square_card_style"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_8sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="@dimen/_15sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:src="@drawable/ic_car"
+                        app:tint="@color/darkPurple"
+                        android:layout_marginBottom="@dimen/_8sdp" />
+
+                    <TextView
+                        style="@style/subtitle_style"
+                        android:text="Car"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginTop="0dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- Row 2: Rickshaw (half-width, centred) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/_20sdp">
+
+            <!-- Instant – Rickshaw -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardInstantRickshaw"
+                style="@style/square_card_style"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/_8sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="@dimen/_15sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:src="@drawable/ic_rickshaw"
+                        app:tint="@color/darkPurple"
+                        android:layout_marginBottom="@dimen/_8sdp" />
+
+                    <TextView
+                        style="@style/subtitle_style"
+                        android:text="Rickshaw"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginTop="0dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Invisible space for Rickshaw card left-aligned -->
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp" />
+
+        </LinearLayout>
+
+        <!--Rent Vehicle Section -->
+        <TextView
+            style="@style/subtitle_style"
+            android:text="Rent Vehicle"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_10sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:baselineAligned="false"
+            android:layout_marginBottom="@dimen/_20sdp">
+
+            <!-- Rent – Bike / Scooter -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRentBike"
+                style="@style/square_card_style"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_marginEnd="@dimen/_8sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="@dimen/_15sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:src="@drawable/ic_bike"
+                        app:tint="@color/darkPurple"
+                        android:layout_marginBottom="@dimen/_8sdp" />
+
+                    <TextView
+                        style="@style/subtitle_style"
+                        android:text="Bike / Scooter"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginTop="0dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Rent – Car -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRentCar"
+                style="@style/square_card_style"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_marginStart="@dimen/_8sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="@dimen/_15sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:src="@drawable/ic_car"
+                        app:tint="@color/darkPurple"
+                        android:layout_marginBottom="@dimen/_8sdp" />
+
+                    <TextView
+                        style="@style/subtitle_style"
+                        android:text="Car"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginTop="0dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

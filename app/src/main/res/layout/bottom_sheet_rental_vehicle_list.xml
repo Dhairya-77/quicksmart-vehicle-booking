@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Bottom sheet for RENTAL vehicle selection.
+    Key differences from bottom_sheet_vehicle_list.xml:
+      • No passenger count spinner
+      • Notice text says "Rate shown is per km"
+      • Empty-state message uses "vehicles" wording
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet_rounded"
+    android:paddingTop="@dimen/_8sdp"
+    android:paddingBottom="@dimen/_28sdp">
+
+    <!-- Drag handle -->
+    <View
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_4sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:background="@color/lightGray" />
+
+    <!-- Title row (no spinner) -->
+    <TextView
+        android:id="@+id/rentalSheetTitle"
+        style="@style/title_style"
+        android:text="Available Vehicles for Rent"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_6sdp" />
+
+    <!-- Per-km rate notice -->
+    <TextView
+        android:id="@+id/perKmRateNotice"
+        style="@style/subtitle_style"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:textColor="@color/darkPurple"
+        android:text="Rate shown is per km"
+        android:visibility="gone" />
+
+    <!-- Empty state -->
+    <TextView
+        android:id="@+id/noVehiclesMessage"
+        style="@style/subtitle_style"
+        android:text="No vehicles available for rent right now. Try again shortly."
+        android:textColor="@color/darkGray"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginVertical="@dimen/_20sdp"
+        android:visibility="gone" />
+
+    <!-- Loading indicator -->
+    <ProgressBar
+        android:id="@+id/sheetProgressBar"
+        style="@style/progress_bar_style"
+        android:visibility="gone" />
+
+    <!-- Vehicles RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rentalVehiclesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="@dimen/_320sdp"
+        android:nestedScrollingEnabled="true"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_8sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>

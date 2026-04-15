@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- New ride request item: consumer info + accept/reject/locate/call actions -->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/textbox_card_style"
+    android:layout_marginHorizontal="@dimen/_15sdp"
+    android:layout_marginBottom="@dimen/_8sdp"
+    android:layout_marginTop="@dimen/_2sdp"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="@dimen/_2sdp"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/lightGray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <!-- Row 1: icon + consumer name + vehicle type -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/_6sdp">
+
+            <!-- Consumer avatar circle -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardBackgroundColor="@color/lightGray"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_person"
+                    app:tint="@color/darkPurple"
+                    android:contentDescription="Consumer" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Name + ride type -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_8sdp">
+
+                <TextView
+                    android:id="@+id/new_req_consumer_name"
+                    style="@style/subtitle_style"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_13sdp"
+                    android:layout_marginTop="0dp" />
+
+                <TextView
+                    android:id="@+id/new_req_vehicle_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/darkGray" />
+
+            </LinearLayout>
+
+            <!-- Persons badge -->
+            <TextView
+                android:id="@+id/new_req_persons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_6sdp"
+                android:paddingVertical="@dimen/_3sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/bg_bottom_sheet_rounded"
+                android:backgroundTint="@color/darkPurple" />
+
+        </LinearLayout>
+
+        <!-- Row 2: pickup → destination (dot-line) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/_8sdp">
+
+            <!-- Dot column -->
+            <LinearLayout
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <View
+                    android:layout_width="@dimen/_7sdp"
+                    android:layout_height="@dimen/_7sdp"
+                    android:background="@drawable/bg_bottom_sheet_rounded"
+                    android:backgroundTint="@color/green" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:background="@color/darkGray"
+                    android:layout_marginVertical="@dimen/_2sdp" />
+
+                <View
+                    android:layout_width="@dimen/_7sdp"
+                    android:layout_height="@dimen/_7sdp"
+                    android:background="@drawable/bg_bottom_sheet_rounded"
+                    android:backgroundTint="@color/darkPurple" />
+
+            </LinearLayout>
+
+            <!-- Address column -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_6sdp">
+
+                <TextView
+                    android:id="@+id/new_req_pickup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/darkGray"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/new_req_destination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/darkPurple"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Row 3: action icons — locate+call LEFT | reject+accept RIGHT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- LEFT group: locate + call (always visible) -->
+            <LinearLayout
+                android:id="@+id/new_req_left_actions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Locate consumer on map -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardBackgroundColor="@color/lightGray"
+                    app:cardElevation="0dp"
+                    android:layout_marginEnd="@dimen/_8sdp">
+
+                    <ImageView
+                        android:id="@+id/new_req_locate_btn"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_action_locate"
+                        app:tint="@color/darkPurple"
+                        android:contentDescription="Locate consumer"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Call consumer -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardBackgroundColor="@color/lightGray"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/new_req_call_btn"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_action_call"
+                        app:tint="@color/green"
+                        android:contentDescription="Call consumer"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- RIGHT group: reject + accept (hidden once accepted) -->
+            <LinearLayout
+                android:id="@+id/new_req_right_actions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Reject (X) -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardBackgroundColor="@color/lightGray"
+                    app:cardElevation="0dp"
+                    android:layout_marginEnd="@dimen/_8sdp">
+
+                    <ImageView
+                        android:id="@+id/new_req_reject_btn"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_action_reject"
+                        app:tint="@color/red"
+                        android:contentDescription="Reject"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Accept (tick) -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardBackgroundColor="@color/darkPurple"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/new_req_accept_btn"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_action_accept"
+                        app:tint="@color/white"
+                        android:contentDescription="Accept"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
