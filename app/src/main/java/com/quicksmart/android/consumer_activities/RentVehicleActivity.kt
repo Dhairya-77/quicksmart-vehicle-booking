@@ -446,9 +446,9 @@ class RentVehicleActivity : AppCompatActivity() {
         val bookingDoc = hashMapOf(
             "consumerId"      to userId,
             "consumerName"    to fullName,
-            "ownerId"         to vehicle.ownerId,
+            "providerId"         to vehicle.ownerId,
             "vehicleId"       to vehicle.vehicleId,
-            "ownerName"       to vehicle.ownerName,
+            "providerName"       to vehicle.ownerName,
             "vehicleNo"       to vehicle.vehicleNo,
             "vehicleType"     to vehicle.vehicleType,
             "pickupLocation"  to pickupLocationInput.text.toString().trim(),

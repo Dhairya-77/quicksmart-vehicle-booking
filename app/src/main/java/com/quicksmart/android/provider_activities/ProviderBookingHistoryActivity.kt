@@ -55,7 +55,7 @@ class ProviderBookingHistoryActivity : AppCompatActivity() {
             .get()
 
         val rentalTask = db.collection("bookings")
-            .whereEqualTo("ownerId", providerId)
+            .whereEqualTo("providerId", providerId)
             .whereEqualTo("bookingType", "rental")
             .whereIn("status", listOf("completed", "cancelled", "rejected"))
             .get()
