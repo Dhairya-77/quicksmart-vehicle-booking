@@ -45,12 +45,12 @@ class ProviderRentalRequestsActivity : AppCompatActivity() {
     }
 
     private fun fetchRentalRequests(emptyState: View, recycler: View, progressBar: View) {
-        val ownerId = getString("userId")
-        if (ownerId.isEmpty()) return
+        val providerId = getString("userId")
+        if (providerId.isEmpty()) return
 
         progressBar.visibility = View.VISIBLE
         db.collection("bookings")
-            .whereEqualTo("ownerId", ownerId)
+            .whereEqualTo("providerId", providerId)
             .whereEqualTo("bookingType", "rental")
             .whereEqualTo("status", "pending")
             .addSnapshotListener { snapshot, e ->
@@ -98,7 +98,7 @@ class ProviderRentalRequestsActivity : AppCompatActivity() {
         val notificationDoc = hashMapOf(
             "userId"    to item.consumerId,
             "title"     to "Rental Booking ${status.replaceFirstChar { it.uppercase() }}",
-            "message"   to "Your rental booking for ${item.ownerName} (${item.vehicleNo}) has been ${status} by the provider.",
+            "message"   to "Your rental booking for ${item.providerName} (${item.vehicleNo}) has been ${status} by the provider.",
             "type"      to "status",
             "isRead"    to false,
             "createdAt" to com.google.firebase.Timestamp.now(),

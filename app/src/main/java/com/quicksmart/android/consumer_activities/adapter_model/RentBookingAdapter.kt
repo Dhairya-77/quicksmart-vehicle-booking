@@ -61,7 +61,7 @@ class RentBookingAdapter(
         val booking = bookings[position]
 
         // Basic fields
-        holder.ownerName.text      = booking.ownerName.ifEmpty { "Unknown Owner" }
+        holder.ownerName.text      = booking.providerName.ifEmpty { "Unknown Owner" }
         holder.vehicleNo.text      = booking.vehicleNo
         
         // Hide time fields and use Date field to show both using toFormattedDateTime,

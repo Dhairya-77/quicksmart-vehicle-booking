@@ -339,7 +339,7 @@ class BookingsFragment : Fragment(R.layout.fragment_consumer_bookings) {
             putExtra(com.quicksmart.android.consumer_activities.PaymentActivity.EXTRA_BOOKING_ID,   booking.bookingId)
             putExtra(com.quicksmart.android.consumer_activities.PaymentActivity.EXTRA_BOOKING_TYPE, "rent")
             putExtra(com.quicksmart.android.consumer_activities.PaymentActivity.EXTRA_AMOUNT,       booking.amount)
-            putExtra(com.quicksmart.android.consumer_activities.PaymentActivity.EXTRA_PROVIDER_ID,  booking.ownerId)
+            putExtra(com.quicksmart.android.consumer_activities.PaymentActivity.EXTRA_PROVIDER_ID,  booking.providerId)
         }
         startActivity(intent)
     }

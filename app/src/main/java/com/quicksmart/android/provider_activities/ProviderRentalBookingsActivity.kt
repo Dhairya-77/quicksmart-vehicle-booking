@@ -46,12 +46,12 @@ class ProviderRentalBookingsActivity : AppCompatActivity() {
     }
 
     private fun fetchAcceptedBookings(emptyState: View, recycler: View, progressBar: View) {
-        val ownerId = getString("userId")
-        if (ownerId.isEmpty()) return
+        val providerId = getString("userId")
+        if (providerId.isEmpty()) return
 
         progressBar.visibility = View.VISIBLE
         db.collection("bookings")
-            .whereEqualTo("ownerId", ownerId)
+            .whereEqualTo("providerId", providerId)
             .whereEqualTo("bookingType", "rental")
             .whereEqualTo("status", "accepted")
             .addSnapshotListener { snapshot, e ->

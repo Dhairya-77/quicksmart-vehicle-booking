@@ -60,7 +60,7 @@ class ProviderHomeFragment : Fragment(R.layout.fragment_provider_home) {
         rentalRequestTask?.remove() // Safety: remove existing listener before starting new one
 
         rentalRequestTask = db.collection("bookings")
-            .whereEqualTo("ownerId", userId)
+            .whereEqualTo("providerId", userId)
             .whereEqualTo("bookingType", "rental")
             .whereEqualTo("status", "pending")
             .addSnapshotListener { snapshot, error ->
